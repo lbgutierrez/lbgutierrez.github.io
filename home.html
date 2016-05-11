@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/bs3/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/simple-sidebar.css" >
+		<style>
+			ul, ol {
+			  list-style: none;
+			}
+			#accordion1 li.panel{
+			    margin-bottom: 0px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top" style="border-bottom: 2px #4F8AFF solid;">
+			<div class="container">
+		    	<div class="navbar-header" style="padding-right: 15px;">
+						<a class="navbar-brand" href="index.html">
+							Brand
+						</a>
+						<a href="#menu-toggle" class="btn btn-default btn-circle navbar-btn" id="menu-toggle">
+							<i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+						</a>
+			    </div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+			        <!--li class="active"><a href="#">Proyectos <span class="sr-only">(current)</span></a></li-->
+			        <!--li><a href="#">Mantenci&oacute;n</a></li-->
+			        <!--li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li><a href="#">Action</a></li>
+			            <li><a href="#">Another action</a></li>
+			            <li><a href="#">Something else here</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">Separated link</a></li>
+			            <li role="separator" class="divider"></li>
+			            <li><a href="#">One more separated link</a></li>
+			          </ul>
+			        </li-->
+			      </ul>
+
+						<ul class="nav navbar-nav navbar-right">
+							<a href="login.html">
+	 	 			    	<button type="button" class="btn btn-primary navbar-btn navbar-right">
+	 	 							<i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>
+	 	 							Salir
+	 	 						</button>
+	 	 			    </a>
+						 </ul>
+					 </div>
+			</div>
+		</nav>
+
+		<div id="wrapper">
+
+			<div id="sidebar-wrapper">
+
+				<ul class="sidebar-nav" id="accordion1">
+					<li>
+						&nbsp;
+					</li>
+					<li>
+							<a data-toggle="collapse" data-parent="#accordion1" href="#proyectosLink">
+								Proyectos
+							</a>
+							<ul id="proyectosLink" class="collapse">
+              	<li>
+									<a href="nuevoProyectoDetalleGeneral.html">
+										Nuevo
+									</a>
+								</li>
+								<li>
+	                <a href="seguimientoProyectos.html">Seguimiento gerente</a>
+	              </li>
+	              <li>
+	                <a href="seguimientoProyectos.html">Seguimiento jefe terreno</a>
+	              </li>
+								<li>
+									<a href="reportes.html">Reportes</a>
+								</li>
+              </ul>
+					</li>
+					<li>
+						<a data-toggle="collapse" data-parent="#accordion1" href="#AdministracionLink">
+							Administraci&oacute;n
+						</a>
+						<ul id="AdministracionLink" class="collapse">
+							<li>
+									<a href="#">Clientes</a>
+							</li>
+							<li>
+								<a href="#">Subcontratos</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a data-toggle="collapse" data-parent="#accordion1" href="#MantenedoresLink">
+							Mantenedores
+						</a>
+						<ul id="MantenedoresLink" class="collapse">
+							<li>
+								<a href="#">Especialidades</a>
+							</li>
+							<li>
+								<a href="#">Tipos de documentos</a>
+							</li>
+							<li>
+								<a href="#">Usuarios</a>
+							</li>
+							<li>
+								<a href="#">Roles y perfiles</a>
+							</li>
+							<li>
+	              <a href="#">Par&aacute;metros</a>
+	            </li>
+						</ul>
+					</li>
+				</ul>
+
+			</div>
+
+			<div id="page-content-wrapper">
+
+			</div>
+
+		</div>
+
+
+		<script src="js/jquery-2.1.4.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="js/bootstrap.min.js"></script>
+
+		<!-- Menu Toggle Script -->
+		<script>
+		$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+		});
+		</script>
+
+	</body>
+</html>
