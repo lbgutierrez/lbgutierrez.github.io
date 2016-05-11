@@ -1,0 +1,112 @@
+body {
+	background-color: #efefef;
+	padding-top: 70px;
+	padding: 0px !important;
+	margin-top: 0px !important;
+	margin-bottom: 0px;
+}
+
+h1 {
+	color: #000000;
+}
+
+/*BUTTONS*/
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
+/*Header bar*/
+.navbar.extended {
+	background: #323239;
+	border-color: #FF0000;
+}
+.navbar-header.extended {
+	background: #323239;
+	width: 188px;
+	height: 50px;
+}
+.navbar-brand.extended {
+
+}
+
+.menu-bar-icon {
+
+}
+#main-content {
+    -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+    transition:all .3s ease-in-out;
+}
+.wrapper {
+    display:inline-block;
+    margin-top:50px;
+    padding:15px;
+    width:100%;
+}
+
+.dropdown.user-menu {
+	height: 50px;
+}
+.dropdown-toggle.user-menu a {
+	color: #2b72a6;
+	font-size: 15px;
+}
+.dropdown-toggle.user-menu span {
+	color: #2b72a6;
+	font-size: 15px;
+}
+
+
+.sortable .panel .panel-heading {
+    cursor: move;
+}
+.position-center {
+    width:60%;
+    margin: 0 auto;
+}
+
+.form-horizontal.bucket-form .form-group {
+    border-bottom:1px solid #eff2f7;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+.form-horizontal.bucket-form .form-group:last-child {
+    border-bottom:none;
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+.form-horizontal.bucket-form .form-group .help-block {
+    margin-bottom:0;
+}
+.cmxform .form-group label.error {
+    display:inline;
+    margin:5px 0;
+    color:#B94A48;
+    font-weight:400;
+}
+input:focus:invalid:focus,textarea:focus:invalid:focus,select:focus:invalid:focus,.cmxform .form-group input.error,.cmxform .form-group textarea.error {
+    border-color:#B94A48 !important;
+}
