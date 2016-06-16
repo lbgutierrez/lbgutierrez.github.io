@@ -1,0 +1,11 @@
+Pasos de instalacion de gradle 2.4
+
+1.- Descargar gradle 2.4 desde el siguiente enlace http://gradle.org/gradle-download/
+2.- descomprimir gradle
+3.- copiar carpeta gradle al directorio /opt
+4.- Crear enlace simbolico en directorio opt ln -s gradle-1.9 gradle (esto sirve por si cambiamos la version de gradle)
+5.- Crear enlace simbolico para ejecutar gradle desde cualquier ubicacion cd /usr/local/bin/ ; sudo ln -s /opt/gradle/bin/gradle
+6.- Agregar variables de entorno en bash_profile vim $HOME/.bash_profile
+7.- copiar las siguientes configuraciones
+	export GRADLE_HOME=/opt/gradle
+	export GRADLE_OPTS="-Xmx768m -XX:MaxPermSize=128m"
