@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/lbg.core.css"/>
+  
+  <!--Let browser know website is optimized for mobile-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style type="text/css">
+    .card-panel {
+      transition: box-shadow .25s;
+      padding: 20px;
+      margin: 0.5rem 0 1rem 0;
+      border-radius: 2px;
+      background-color: #fff;
+    }
+    .z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    }
+    h4.header2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <aside>
+    <ul id="slide-out" class="side-nav fixed red darken-4">
+      <li>
+        <div class="userView">
+          <a href="perfil.html"><span class="name">Luis B. Gutierrez G.</span></a>
+          <a href="#!rol"><span class="rol">Administrador</span></a>
+        </div>
+      </li>
+      
+      <li class="no-padding">
+        <ul class="collapsible" data-collapsible="accordion">
+          <li class="bold">
+            <a href="home.html" class="waves-effect waves-light-blue">Inicio</a>
+          </li>
+          <li class="bold">
+            <a href="https://github.com/lbgutierrez/Web-Templates" class="waves-effect waves-light-blue" target="_blank">Github</a>
+          </li>
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-light-blue">
+              Administración<i class="material-icons">expand_less</i>
+            </a>
+            <div class="collapsible-body">
+              <ul >
+                <li><a href="admin-usuarios.html">Usuarios</a></li>
+                <li><a href="admin-roles.html">Roles</a></li>
+                <li><a href="admin-permisos.html">Permisos</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="bold">
+            <a class="collapsible-header waves-effect waves-light-blue">
+              Administración<i class="material-icons">expand_less</i>
+            </a>
+            <div class="collapsible-body">
+              <ul >
+                <li><a href="admin-usuarios.html">Usuarios</a></li>
+                <li><a href="admin-roles.html">Roles</a></li>
+                <li><a href="admin-permisos.html">Permisos</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+  
+  <header>
+    <nav>
+      <div class="nav-wrapper white black-text">
+        <!--a href="#" class="brand-logo">Logo</a-->
+        <a href="#" data-activates="slide-out" class="button-collapse">
+            <i class="material-icons grey-text">menu</i>
+        </a>
+        <ul class="left">
+            <li><span class="nav-title">Administración de roles</span></li>
+        </ul>
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <!--li><a href="badges.html" class="grey-text">Components</a></li>
+          <li><a href="collapsible.html" class="grey-text">JavaScript</a></li-->
+          <li>
+            <a href="#!" data-activates="dropdown1" class="dropdown-button dropdown-profile translation-button">
+                <img class="circle profile-img" src="img/perfil-165x165.png">
+            </a>
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="perfil.html" class="red-text darken-4">Perfil</a></li>
+                <li><a href="perfil-editar.html" class="red-text darken-4">Editar Perfil</a></li>
+                <li class="divider"></li>
+                <li><a href="login.html" class="red-text darken-4">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+    <div class="container">
+
+      <div class="row">
+
+       <div class="col s12 m12 16">
+         <div class="card-panel">
+          <h4 class="header2">Nuevo rol</h4>
+          <p>Aquí alguna descripción del formulario.</p>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="nombreUsuarioId" data-error="Por favor ingrese un nombre de usuario válido." class="active">Nombre usuario</label>
+                  <input id="nombreUsuarioId" type="text">            
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="emailId" data-error="Por favor ingrese un email válido." class="active">Email</label>
+                  <input id="emailId" type="email">
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="rolesId" class="active">Roles</label>
+                  <select multiple id="rolesId">
+                    <option value="" disabled selected>Seleccione opción</option>
+                    <option value="1">Administrador</option>
+                    <option value="3">Alumno</option>
+                    <option value="4">Apoderado</option>
+                    <option value="2">Profesor</option>
+                  </select>
+                  
+                </div>
+              </div>  
+              <div class="row">
+                <div class="input-field col s6">
+                  <label for="fechaCaducidadId" data-error="Por favor ingrese una fecha de caducidad válida." class="active">Fecha caducidad</label>
+                  <input id="fechaCaducidadId" type="date" class="datepicker">
+                </div>
+                <div class="input-field col s6">
+                  <label for="estadoId" class="active">Estado</label>
+                  <select id="estadoId">
+                    <option value="" disabled selected>Seleccione opción</option>
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
+                  </select>
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-button col s12">
+                  <button class="btn waves-effect waves-light right red darken-4" type="submit" name="action">
+                    Guardar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+         </div>
+       </div>
+      
+      </div>
+      
+    </div>
+
+    
+  </main>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script>
+   (function($){
+      $(function(){
+
+        $('select').material_select();
+
+        $('.button-collapse').sideNav({
+          menuWidth: 250, // Default is 300
+          edge: 'left', // Choose the horizontal origin
+          closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+          draggable: true // Choose whether you can drag to open on touch screens
+        });
+
+        $('.dropdown-button').dropdown({
+          inDuration: 300,
+          outDuration: 225,
+          hover: true, // Activate on hover
+          belowOrigin: true, // Displays dropdown below the button
+          alignment: 'right' // Displays dropdown with edge aligned to the left of button
+        });
+
+        $('.datepicker').pickadate({
+          selectMonths: true, // Creates a dropdown to control month
+          selectYears: 15, // Creates a dropdown of 15 years to control year
+          firstDay: true,
+          format: 'dd/mm/yyyy',
+          labelMonthNext: 'Mes siguiente',
+          labelMonthPrev: 'Mes anterior',
+          labelMonthSelect: 'Seleccione un mes',
+          labelYearSelect: 'Selecciona un año',
+          monthsFull: [ 'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre' ],
+          monthsShort: [ 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic' ],
+          weekdaysFull: [ 'Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado' ],
+          weekdaysShort: [ 'Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab' ],
+          weekdaysLetter: [ 'D', 'L', 'M', 'X', 'J', 'V', 'S' ],
+          today: 'Hoy',
+          clear: 'Limpiar',
+          close: 'Cerrar'
+        });
+
+      }); // end of document ready
+    })(jQuery); 
+  </script>
+</body>
+</html>
+
