@@ -364,6 +364,7 @@
 
 <script type="application/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		var converter = new showdown.Converter(),
 		text = '# hello, markdown!',
 		html = converter.makeHtml(text);
 		$.ajax( { url: 'https://raw.githubusercontent.com/lbgutierrez/lbgutierrez.github.io/master/blog/tutorial-flask-cap1.md',
