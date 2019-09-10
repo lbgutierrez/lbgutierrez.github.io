@@ -154,6 +154,7 @@
 
 <script type="application/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		var url = new URL( window.location.href );
 		var post = url.searchParams.get("post");
 		var converter = new showdown.Converter(),
 		text = '# hello, markdown!',
