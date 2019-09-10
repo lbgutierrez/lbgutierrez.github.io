@@ -331,19 +331,8 @@
 			</div>
 
 			<!-- Item 1 -->
-			<div class="item">
-				<div class="row">
-					<div class="thumb col-md-4 col-sm-3 col-xs-12">
-						<img src="assets/images/blog-port-templates-web.png" alt="blog-post">
-					</div>
-					<div class="text col-md-8 col-sm-9 col-xs-12">
-						<h2>Templates web</h2>
-						<p>La presente entrada, documenta el estado actual los templates para sistemas web, cuyo objeto es apoyar a los programadores en etapas tempranas del desarrollo.</p>
-
-						<a href="blog-templates-web.html" class="btn btn-default">Leer más</a>
-
-					</div>
-				</div>
+			<div id="blog-item" class="item">
+				
 			</div>
 
 			<div class="more-items">
@@ -371,6 +360,21 @@
 <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="assets/js/custom.js"></script>
 <script type="text/javascript" src="assets/js/smoothscroll.min.js"></script>
+<script type="text/javascript" src="assets/js/showdown.min.js"></script>
+
+<script type="application/javascript">
+	document.addEventListener('DOMContentLoaded', function () {
+		text = '# hello, markdown!',
+		html = converter.makeHtml(text);
+		$.ajax( { url: 'https://raw.githubusercontent.com/lbgutierrez/lbgutierrez.github.io/master/blog/tutorial-flask-cap1.md',
+			type: 'get', 
+			dataType: 'html',
+			async: false,
+			success: function(data) { html = converter.makeHtml(data); } 
+		});
+		document.getElementById("content").innerHTML=html;
+	});
+</script>
 
 </body>
 </html>
