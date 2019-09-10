@@ -6,6 +6,6 @@
 		<h2>Tutorial Flask - Capitulo 1</h2>
 		<p>En este tutorial, solo se pretende crear de forma práctica una aplicacion hello world, haciendo uso del framework Flask.</p>
 
-		<a href="blog-templates-web.html" class="btn btn-default">Leer más</a>
+		<a href="blog-templates-web.html?post=tutorial-flask-cap1" class="btn btn-default">Leer más</a>
 	</div>
 </div>
