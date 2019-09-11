@@ -45,57 +45,7 @@
 <main class="wrapper">
 
 	<!-- Header -->
-	<header class="header pull-left">
-
-		<!-- Mobile menu -->
-		<div class="mobile-bar visible-sm visible-xs">
-			<div class="hamburger-menu">
-				  <div class="bar"></div>	
-			</div>
-		</div>
-		<!-- Mobile menu end -->
-
-		<div class="avatar">
-			<img src="assets/images/01_logo.jpg" alt="avatar">
-		</div>
-
-		<div class="name">
-			<h1>Nick Black</h1>
-			<span>@Graphic Designer</span>
-		</div>
-
-		<!-- Social Icons -->
-		<div class="social-icons">
-			<ul>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-flickr" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-		<!-- Social Icons end -->
-
-		<!-- Navigation bar -->
-		<nav class="main-nav">
-			<ul class="navigation">
-				<li><a href="index.html">Welcome</a></li>
-				<li><a href="index.html">About</a></li>
-				<li><a href="index.html">Resume</a></li>
-				<li><a href="portfolio.html">Works</a></li>
-				<li class="current"><a href="index.html">Blog</a></li>
-				<li><a href="index.html">Contact</a></li>
-			</ul>
-		</nav>
-		<!-- Navigation bar end -->
-
-		<!-- Footer Copyright -->
-		<div class="copyright">
-			<span>© Copyright 2016 Nick Black</span>
-		</div>
-		<!-- Footer Copyright end -->
-
-	</header>
+	<header id="blog-menu" class="header pull-left"></header>
 	<!-- Header end -->
 
 	<!-- Main Content -->
@@ -168,7 +118,7 @@
 				document.getElementById( "blog" ).innerHTML=html;
 			} 
 		});
-		
+
 		$.ajax( { url: 'blog-menu.html',
 			type: 'get', 
 			dataType: 'html',
