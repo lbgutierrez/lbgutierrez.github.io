@@ -154,18 +154,30 @@
 
 <script type="application/javascript">
 	document.addEventListener('DOMContentLoaded', function () {
+		
 		var url = new URL( window.location.href );
 		var post = url.searchParams.get("post");
-		var converter = new showdown.Converter(),
-		text = '# hello, markdown!',
-		html = converter.makeHtml(text);
-		$.ajax( { url: 'https://raw.githubusercontent.com/lbgutierrez/lbgutierrez.github.io/master/blog/post-' + post + '.md',
+		var converter = new showdown.Converter();
+		
+		$.ajax( { url: 'blog/post-' + post + '.md',
 			type: 'get', 
 			dataType: 'html',
 			async: false,
-			success: function(data) { html = converter.makeHtml(data); } 
+			success: function( data ) { 
+				html = converter.makeHtml( data ); 
+				document.getElementById( "blog" ).innerHTML=html;
+			} 
 		});
-		document.getElementById("blog").innerHTML=html;
+		
+		$.ajax( { url: 'blog-menu.html',
+			type: 'get', 
+			dataType: 'html',
+			async: false,
+			success: function( data ) { 
+				document.getElementById( "blog-menu" ).innerHTML=data; 
+			} 
+		});
+		
 	});
 </script>
 </body>
