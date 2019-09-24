@@ -17,6 +17,6 @@
 		<h2>Tutorial Flask - Apuntes</h2>
 		<p>Los siguientes apuntes tienen como objetivo explicar conceptos relacionados con el Framework Flask, donde podrás acudir de forma inmediata si necesitas aclarar alguna duda.</p>
 
-		<a href="blog-templates-web.html?post=tutorial-flask-glosario" class="btn btn-default">Leer más</a>
+		<a href="blog-templates-web.html?post=tutorial-flask-apuntes" class="btn btn-default">Leer más</a>
 	</div>
 </div>
