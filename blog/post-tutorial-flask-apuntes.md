@@ -88,44 +88,133 @@ Si queremos ver el mapa de rutas que se elabora en la aplicación, debemos ingre
 
 ##Atributos del objeto request
 
-- form: Un diccionario con todos los campos de formulario enviados con la solicitud.
+```
+	- form: Un diccionario con todos los campos de formulario enviados con la solicitud.
 
-- args: Un diccionario con todos los argumentos pasados en la cadena de consulta de la URL.
+	- args: Un diccionario con todos los argumentos pasados en la cadena de consulta de la URL.
 
-- values: Un diccionario que combina los valores en formy args.
+	- values: Un diccionario que combina los valores en formy args.
 
-- cookies: Un diccionario con todas las cookies incluidas en la solicitud.
+	- cookies: Un diccionario con todas las cookies incluidas en la solicitud.
 
-- headers: Un diccionario con todos los encabezados HTTP incluidos en la solicitud.
+	- headers: Un diccionario con todos los encabezados HTTP incluidos en la solicitud.
 
-- files: Un diccionario con todas las cargas de archivos incluidas con la solicitud.
+	- files: Un diccionario con todas las cargas de archivos incluidas con la solicitud.
 
-- get_data(): Devuelve los datos almacenados en el búfer del cuerpo de la solicitud.
+	- get_data(): Devuelve los datos almacenados en el búfer del cuerpo de la solicitud.
 
-- get_json(): Devuelve un diccionario de Python con el JSON analizado incluido en el cuerpo de la solicitud.
+	- get_json(): Devuelve un diccionario de Python con el JSON analizado incluido en el cuerpo de la solicitud.
 
-- blueprint: El nombre del plano del Frasco que maneja la solicitud.
+	- blueprint: El nombre del plano del Frasco que maneja la solicitud.
 
-- endpoint: El nombre del punto final de Flask que maneja la solicitud. Flask usa el nombre de la función de vista como el nombre del punto final para una ruta.
+	- endpoint: El nombre del punto final de Flask que maneja la solicitud. Flask usa el nombre de la función de vista como el nombre del punto final para una ruta.
 
-- method: El método de solicitud HTTP, como GET o POST.
+	- method: El método de solicitud HTTP, como GET o POST.
 
-- scheme: El esquema de URL (http o https).
+	- scheme: El esquema de URL (http o https).
 
-- is_secure(): Devuelve True si la solicitud se realizó a través de una conexión segura (HTTPS).
+	- is_secure(): Devuelve True si la solicitud se realizó a través de una conexión segura (HTTPS).
 
-- host: El host definido en la solicitud, incluido el número de puerto si lo proporciona el cliente.
+	- host: El host definido en la solicitud, incluido el número de puerto si lo proporciona el cliente.
 
-- path: La porción de ruta de la URL.
+	- path: La porción de ruta de la URL.
 
-- query_string: La parte de la cadena de consulta de la URL, como un valor binario sin procesar.
+	- query_string: La parte de la cadena de consulta de la URL, como un valor binario sin procesar.
 
-- full_path: La ruta y las porciones de cadena de consulta de la URL.
+	- full_path: La ruta y las porciones de cadena de consulta de la URL.
 
-- url: La URL completa solicitada por el cliente.
+	- url: La URL completa solicitada por el cliente.
 
-- base_url: Igual que URL, pero sin el componente de cadena de consulta.
+	- base_url: Igual que URL, pero sin el componente de cadena de consulta.
 
-- remote_addr: La dirección IP del cliente.
+	- remote_addr: La dirección IP del cliente.
 
-- environ: El diccionario de entorno WSGI sin procesar para la solicitud.
+	- environ: El diccionario de entorno WSGI sin procesar para la solicitud.
+```
+
+##Request Hooks
+
+```
+Los hooks permiten ejecutar codigo antes y despues de que se realiza una peticion, esto es util cuando queremos registrar informacion en un log, abrir y cerrar una conexion de base de datos, etc.
+
+Flask provee cuatro hooks compatibles:
+
+	- before_request: Registra una función para ejecutar antes de cada solicitud.
+
+	- before_first_request: Registra una función para ejecutarse solo antes de que se maneje la primera solicitud. Esta puede ser una forma conveniente de agregar tareas de inicialización del servidor.
+
+	- after_request: Registra una función para ejecutar después de cada solicitud, pero solo si no se produjeron excepciones no controladas.
+
+	- teardown_request: Registra una función para ejecutar después de cada solicitud, incluso si se produjeron excepciones no controladas.
+```
+
+##Response
+
+```
+Como se ha visto en ejemplos anteriores, las respuestas se han basado en cadenas de texto (String), sin embargo, podemos devolver tuplas en la cual devolvamos un codigo de respuesta distinto al estado 200 (estado ok).
+	
+	Ej:
+		@app.route('/')
+		def index():
+			return '<h1>Bad Request</h1>', 400
+			
+Sin embargo, Flask proporciona la funcion make_response() que puede recibir hasta 3 argumentos y devuelve un objeto response. Este metodo es util si queremos customizar la respuesta para modificar cookie por ejemplo.
+
+	Ej:
+		from flask import make_response
+
+		@app.route('/')
+		def index():
+			response = make_response('<h1>This document carries a cookie!</h1>')
+			response.set_cookie('answer', '42')
+			return response
+			
+Los atributos del objeto response, son los siguientes:
+
+	- status_code: El código numérico de estado HTTP
+
+	- headers: Un objeto tipo diccionario con todos los encabezados que se enviarán con la respuesta.
+
+	- set_cookie(): Agrega una cookie a la respuesta.
+
+	- delete_cookie(): Elimina una cookie
+
+	- content_length: La longitud del cuerpo de respuesta.
+
+	- content_type: El tipo de medio del cuerpo de respuesta
+
+	- set_data(): Establece el cuerpo de la respuesta como un valor de cadena o bytes
+
+	- get_data(): Obtiene el cuerpo de respuesta
+```
+
+##Redirect
+
+```
+Un redirect es un tipo especial de respuesta, que se utiliza por lo general al recibir peticiones de formulario. El código de estado de respuesta es el 302, sin embargo el Framework Flask proporciona una función redirect() para este propósito.
+
+	Ej:
+		from flask import redirect
+
+		@app.route('/')
+		def index():
+			return redirect('http://www.example.com')
+```
+		
+##Abort
+
+```
+Es otra respuesta especial es la generada por la función abort(), que se utiliza para el manejo de errores.
+	
+	Ej:
+		from flask import abort
+
+		@app.route('/user/<id>')
+		def get_user(id):
+			user = load_user(id)
+			if not user:
+				abort(404)
+			return '<h1>Hello, {}</h1>'.format(user.name)
+
+Ten en cuenta que abort()no devuelve el control a la función porque genera una excepción.
+```
