@@ -86,15 +86,15 @@ groups:
     permissions:
     - '*'
 users:
-  Kursed_Kid:
+  jack_torrance87:
     group:
-    - Owner
-  Jpeack:
+    - Admin
+  wosept47:
     group:
-    - Member
+    - Mod
   Dacythe:
     group:
     - Member
-  Michaelx420x
+  Michaelx420x:
     group:
     - Member
