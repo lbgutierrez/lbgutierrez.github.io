@@ -64,10 +64,10 @@ groups:
     - pvptoggle.self.status
     - pvptoggle.other.status
     
- users:
-    AnEpicGinger:
-        permissions:
-        - permissions.* 
-        - '*'
-        group:
-        - admin
+users:
+    84eb5f24-1f7d-4584-b94b-e30bb1445bf5:
+      permissions:
+      - permissions.* 
+      - '*'
+      group:
+      - admin
