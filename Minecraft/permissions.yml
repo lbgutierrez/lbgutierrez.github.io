@@ -1,0 +1,205 @@
+groups:
+  default:
+    default: true
+    permissions:
+    - essentials.pay
+    - essentials.tpaccept
+    - essentials.kit.tools
+    - essentials.homa
+    - essentials.sethome
+    - mobarena.use.playerlist
+    - mobarena.use.arenalist
+    - mobarena.use.spectate
+    - mobarena.use.leave
+    - mobarena.use.join
+    - essentials.home.multiple
+    - essentials.sethome.multiple
+    - reporter.report
+    - essentials.ignore
+    - essentials.tpadeny
+    - essentials.tpahere
+    - essentials.tpa
+    - essentials.money
+    - essentials.helpop
+    - essentials.help
+    - essentials.suicide
+    - essentials.motd
+    - essentials.list
+    - essentials.back
+    - essentials.spawn
+    - essentials.sethome.others
+    - essentials.home.others
+    - essentials.home
+    - essentials.warp.list
+    - essentials.warp
+    - essentials.msg
+    - essentials.kits.tools
+    - essentials.sell
+    - essentials.afk
+    - essentials.delhom
+    - modifyworld.*
+    prefix: '&0[&aMiembro&0]&1'
+    worlds:
+      tools: {}
+  Moderador:
+    inheritance:
+    - default
+    prefix: '&f[&5Mod&f]'
+    options:
+      rank: '20'
+    permissions:
+    - '*'
+    - essentials.jail.others
+    - essentials.jail
+    - essentials.kick
+    - essentials.kick.notify
+    - essentials.mute.notify
+    - essentials.remove
+  Owner:
+    inheritance:
+    - JefeOwner
+    options:
+      rank: '10'
+    prefix: '&0[&4Admin&0]'
+    permissions:
+    - '*'
+  VIP:
+    prefix: '&0[&6Vip&0]'
+    permissions:
+    - essentials.tpdeny
+    - essentials.tpahere
+    - essentials.tpa
+    - essentials.money
+    - essentials.back
+    - essentials.sethome
+    - essentials.repairall
+    - essentials.repair.all
+    - essentials.repair.hand
+    - essentials.fly
+  Builder:
+    worlds:
+      essentials.gamemode:
+        permissions:
+        - permissions
+    permissions:
+    - essentials.tpaccept
+    - essentials.tpa
+    - essentials.ignore
+    - essentials.tpdeny
+    - essentials.warps
+    - essentials.money
+    - essentials.warp
+    - essentials.spawn
+    - essentials.delhome
+    - essentials.home
+    - essentials.sethome
+    - Gamemode
+    - essentials.gamemode
+    prefix: '&0[&6Builder&0]&2'
+  VIP-YT:
+    prefix: '&0[&aVIP&0]&6'
+    permissions:
+    - essentials.wand
+    - essentials.back
+    - essentials.kits.dtools
+    - essentials.kits
+    - essentials.kit.dtools
+    - essentials.warp
+    - essentials.spawn
+    - essentials.kit
+    - essentials.helpop
+    - essentials.help
+    - essentials.money
+    - essentials.msg
+    - essentials.fly
+    - essentials.home
+    - essentials.sethome
+    - essentials.tpaccept
+    - essentials.tpdeny
+    - essentials.tpa
+    - /fly
+  JefeBuilder:
+    prefix: '&0[&6Jefe&2Builder&0]&1'
+    permissions:
+    - essentials.spawn
+    - essentials.tpahere
+    - essentials.tpaccept
+    - essentials.tpdeny
+    - essentials.tpa
+    - essentials.home
+    - essentials.sethome
+    - essentials.sethoome
+    - essentials.gamemode
+  Helper:
+    prefix: '&0[&eGuía&0]&f'
+    permissions:
+    - essentials.gamemode
+    - essentials.broadcast
+    - essentials.tpdeny
+    - essentials.tpahere
+    - essentials.tpa
+    - essentials.home
+    - essentials.sethome
+    - essentials.fly
+    - essentials.jail.others
+    - essentials.jail	
+users:
+  Tamenco:
+    group:
+    - JefeOwner
+  drxy:
+    group:
+    - Owner
+  Bea:
+    group:
+    - Owner
+    options:
+      group: heroe
+  LoKillBoy:
+    group:
+    - Arquitecto
+  nico04ultra:
+    group:
+    - Moderador
+  Greenhawk837:
+    options:
+      group: Vip
+    group:
+    - JefeBuilder
+  LuisCrafterxd:
+    group:
+    - VIP-YT
+  Nikov:
+    group:
+    - Builder
+  default:
+    group:
+    - Helper
+  matahackxD:
+    group:
+    - default
+  Zoid:
+    group:
+    - Moderador
+  legenditov:
+    group:
+    - M-Admin
+  apple1003:
+    group:
+    - Owner
+  EnginE3r:
+    group:
+    - default
+  zillagabe99:
+    group:
+    - VIP-YT
+  Sauron:
+    group:
+    - VIP
+  zetaemeka:
+    group:
+    - AdminDeRashoosLaser
+  LukrecioZD:
+    group:
+    - Builder
+
