@@ -1,0 +1,24 @@
+[23:45:20] [Server thread/INFO]: /tphere: Teleport a player to you.
+[23:45:20] [Server thread/INFO]: /tpo: Teleport override for tptoggle.
+[23:45:20] [Server thread/INFO]: /tpoffline: Teleport to a player's last known logout location
+[23:45:20] [Server thread/INFO]: /tpohere: Teleport here override for tptoggle.
+[23:45:20] [Server thread/INFO]: /tppos: Teleport to coordinates.
+[23:45:20] [Server thread/INFO]: /tps: Gets the current ticks per second for the server
+[23:45:20] [Server thread/INFO]: /tptoggle: Blocks all forms of teleportation.
+[23:45:20] [Server thread/INFO]: /tree: Spawn a tree where you are looking.
+[23:45:20] [Server thread/INFO]: /trigger: A Mojang provided command.
+[23:45:20] [Server thread/INFO]: /unban: Unbans the specified player.
+[23:45:20] [Server thread/INFO]: /unbanip: Unbans the specified IP address.
+[23:45:20] [Server thread/INFO]: /unlimited: Allows the unlimited placing of items.
+[23:45:20] [Server thread/INFO]: /vanish: Hide yourself from other players.
+[23:45:20] [Server thread/INFO]: /vault-convert: Converts all data in economy1 and dumps it into economy2
+[23:45:20] [Server thread/INFO]: /vault-info: Displays information about Vault
+[23:45:20] [Server thread/INFO]: /version: Gets the version of this server including any plugins in use
+[23:45:20] [Server thread/INFO]: /warp: List all warps or warp to the specified location.
+[23:45:20] [Server thread/INFO]: /weather: Sets the weather.
+[23:45:20] [Server thread/INFO]: /whitelist: A Mojang provided command.
+[23:45:20] [Server thread/INFO]: /whois: Determine the username behind a nickname.
+[23:45:20] [Server thread/INFO]: /workbench: Opens up a workbench.
+[23:45:20] [Server thread/INFO]: /world: Switch between worlds.
+[23:45:20] [Server thread/INFO]: /worldborder: A Mojang provided command.
+[23:45:20] [Server thread/INFO]: /worth: Calculates the worth of items in hand or as specified.
