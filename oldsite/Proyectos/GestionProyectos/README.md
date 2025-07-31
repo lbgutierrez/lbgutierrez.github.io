@@ -1,1 +1,0 @@
-# lbgutierrez.github.io
