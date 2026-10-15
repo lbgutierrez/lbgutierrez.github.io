@@ -4,7 +4,7 @@ import { getActiveGallerySlug, getGalleryData } from '@/lib/gallery'
 import Slideshow from '@/components/Slideshow'
 
 const AUTHOR = 'Bastián Gutiérrez'
-const DESCRIPTION = 'Fotografía documental · Santiago de Chile'
+const DESCRIPTION = 'Fotografía de autor · Santiago de Chile'
 
 const SITE_URL = 'https://www.bastiangutierrez.com'
 
