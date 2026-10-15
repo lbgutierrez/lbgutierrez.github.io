@@ -44,33 +44,25 @@ export const getStaticProps: GetStaticProps<ArchiveProps> = async () => {
 }
 
 const ArchivePage: NextPage<ArchiveProps> = ({ archiveGroups }) => (
-    <div className='c-content-page'>
-            
-        <Title value='Archive' urlReturn='/' align='left' ></Title>
+  <>
+    <Title value='Escritos' />
 
-        <div className='c-content-page__wrapper'>
-            {archiveGroups.map(group => (
-                <section className='c-archive' key={group.key}>
-                    <h2 className='c-archive__title'>{group.label}</h2>
-                    <ul className='c-archive__items-list'>
-                    {group.posts.map(({ slug, title, date }) => (
-                        <li key={slug} className='c-archive__item'>
-                            <Link href={`/posts/${slug}`}>
-                                {title}
-                            </Link>
-                            {' '}
-                            <small>
-                                {format(parseISO(date), 'd MMM yyyy', { locale: es })}
-                            </small>
-                        </li>
-                    ))}
-                    </ul>
-                </section>
-            ))}
+    {archiveGroups.map(group => (
+      <section key={group.key}>
+        <h2 className='c-section-label'>{group.label}</h2>
+        <div className='c-index'>
+          {group.posts.map(({ slug, title, date }) => (
+            <Link key={slug} href={`/posts/${slug}`} className='c-index__row'>
+              <div>
+                <h3 className='c-index__title c-index__title--sm'>{title}</h3>
+                <span className='c-index__meta'>{format(parseISO(date), "d 'de' MMMM yyyy", { locale: es })}</span>
+              </div>
+            </Link>
+          ))}
         </div>
-
-       
-  </div>
+      </section>
+    ))}
+  </>
 )
 
 export default ArchivePage

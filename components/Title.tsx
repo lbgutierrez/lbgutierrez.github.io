@@ -1,50 +1,25 @@
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 interface TitleProps {
   value: string
-  urlReturn: string
-  align?: string
-  mb?: string
-  fallback?: string
+  size?: 'lg' | 'md'
+  back?: { href: string; label: string }
+  children?: ReactNode // metadatos bajo el título
 }
 
-const Title: React.FC<TitleProps> = ( { value, urlReturn, align = 'center', mb = '1', fallback = '/' } ) => {
-
-    const router = useRouter()
-
-    const handleBack = () => {
-        if (typeof window !== 'undefined' && window.history.length > 1) {
-            router.back()
-        } else {
-            router.push(fallback)
-        }
-    }
-
-    return (
-        <div className='c-title'>
-            <div className={`c-title__wrapper u-mb-${ mb }`}>
-                <div>
-                    <Link href={ urlReturn } onClick={handleBack}>
-                        &lt; volver
-                    </Link>
-                </div>
-                <div className={`c-title__value c-title__value--${ align }`}>
-                    {value}
-                </div>
-                <div>
-                    &nbsp;
-                </div>
-                
-            </div>
-        </div>
-    )
-
-}
+const Title: React.FC<TitleProps> = ({ value, size = 'lg', back, children }) => (
+  <div className='c-page-title'>
+    {back && (
+      <Link href={back.href} className='c-page-title__back'>
+        ← {back.label}
+      </Link>
+    )}
+    <h1 className={`c-page-title__value ${size === 'md' ? 'c-page-title__value--md' : ''}`}>
+      {value}
+    </h1>
+    {children && <div className='c-page-title__meta'>{children}</div>}
+  </div>
+)
 
 export default Title
-
-
-
-

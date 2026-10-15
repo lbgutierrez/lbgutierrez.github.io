@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { getAllPostSlugs, getPostData, PostData } from '../../lib/posts'
 import { formatDateVerboseES } from '../../lib/date'
+import Head from 'next/head'
 import Title from '../../components/Title'
 
 interface PostPageProps {
@@ -19,28 +20,18 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({ params }) 
 }
 
 const PostPage: NextPage<PostPageProps> = ({ postData }) => (
-  
-    <div className='c-content-page'>
+  <>
+    <Head>
+      <title>{`Bastián Gutiérrez | ${postData.title}`}</title>
+    </Head>
 
-        <div className='c-content-page__wrapper'>
+    <Title value={postData.title} size='md' back={{ href: '/archive', label: 'Escritos' }}>
+      <span>{formatDateVerboseES(postData.date)}</span>
+      <span>Categoría: <strong>{postData.category}</strong></span>
+    </Title>
 
-            <Title value={postData.title} urlReturn='/' align='left' mb="0"></Title>
-            
-            <div className="c-post">
-               
-                <div className='c-post__metadata'>
-                    <small className='c-post__metadata__item'>{formatDateVerboseES(postData.date)}</small>
-                    <small className='c-post__metadata__item'>Categoría: {postData.category}</small>
-                </div>
-
-                <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-
-            </div>
-
-        </div>
-
-    </div>
-
+    <article className='c-prose' dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+  </>
 )
 
 export default PostPage
