@@ -837,10 +837,9 @@ a.c-index__row:hover .c-index__title {
     align-items: start;
   }
 
-  /* Cita: alineada a la izquierda en pantallas angostas */
+  /* Cita: alineada a la derecha, como en escritorio */
   .c-quote {
     margin: 0 0 2.5rem 0;
-    text-align: left;
   }
 
   /* Footer apilado */
