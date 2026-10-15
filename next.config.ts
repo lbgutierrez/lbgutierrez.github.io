@@ -11,7 +11,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  trailingSlash: true, // genera carpeta/index.html: evita choques gallery.html vs gallery/ en GitHub Pages
+  trailingSlash: true, // genera carpeta/index.html: evita choques trabajo.html vs trabajo/ en GitHub Pages
   images: {
     unoptimized: true // importante si usas <Image />
   },

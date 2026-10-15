@@ -13,8 +13,8 @@ const BaseLayout: React.FC<LayoutProps> = ({ children }) => {
   // El inicio es solo el fondo de fotos: header sobre la imagen y sin footer
   const { pathname } = useRouter()
   const isHome = pathname === '/'
-  // Galería, Escritos y Biografía usan la paleta "piedra" (ver .layout--stone en globals.css)
-  const isStone = ['/gallery', '/archive', '/posts', '/biografia'].some((p) => pathname.startsWith(p))
+  // Trabajo, Escritos y Biografía usan la paleta "piedra" (ver .layout--stone en globals.css)
+  const isStone = ['/trabajo', '/gallery', '/archive', '/posts', '/biografia'].some((p) => pathname.startsWith(p))
 
   // Sin menú contextual sobre las fotos (complementa el CSS de img en globals.css)
   useEffect(() => {

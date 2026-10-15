@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const NAV = [
   { href: '/', label: 'Inicio', match: (p: string) => p === '/' },
-  { href: '/gallery', label: 'Galería', match: (p: string) => p.startsWith('/gallery') },
+  { href: '/trabajo', label: 'Trabajo', match: (p: string) => p.startsWith('/trabajo') },
   // Ocultos mientras no tengan contenido: para mostrarlos, quitar el // de la línea
   // { href: '/archive', label: 'Escritos', match: (p: string) => p.startsWith('/archive') || p.startsWith('/posts') },
   // { href: '/biografia', label: 'Biografía', match: (p: string) => p.startsWith('/biografia') },
