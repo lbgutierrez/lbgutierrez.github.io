@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useRef, useState } from 'react'
+import { FUEGO_NEGRO_URL, INSTAGRAM_URL } from '@/lib/links'
 
 const NAV = [
   { href: '/', label: 'Inicio', match: (p: string) => p === '/' },
@@ -10,9 +11,7 @@ const NAV = [
   // { href: '/biografia', label: 'Biografía', match: (p: string) => p.startsWith('/biografia') },
 ]
 
-// Si una URL queda vacía, su ícono se oculta
-const INSTAGRAM_URL = 'https://www.instagram.com/bastian.gutierrezg/'
-const FUEGO_NEGRO_URL = 'https://www.fuegonegro.com/fotografo/bastian-gutierrez'
+// URLs en lib/links.ts. Si una queda vacía, su ícono se oculta
 
 const InstagramIcon = () => (
   <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='1.25' aria-hidden='true'>
