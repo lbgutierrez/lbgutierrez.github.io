@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { FUEGO_NEGRO_URL, SITE_URL } from '@/lib/links'
 
 const LINKS = [
-  { href: '/', title: 'Archivo fotográfico', detail: 'Obra y proyectos fotográficos', external: false },
+  { href: '/', title: 'Archivo fotográfico', detail: 'Trabajos y proyectos fotográficos', external: false },
   { href: FUEGO_NEGRO_URL, title: 'Fuego Negro', detail: 'Exposiciones · Ediciones · Impresiones', external: true },
 ]
 
